@@ -6,6 +6,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('api/companies/', include('companies.urls'))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
-  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('api/companies/', include('companies.urls')),
+    path('api/games/', include('games.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
