@@ -15,7 +15,6 @@ class CompanyDetailAPIView(generics.RetrieveAPIView):
     lookup_field = 'id'
 
 
-
 class CompanyCreateAPIView(generics.CreateAPIView):
     queryset = Company.objects.all()
     serializer_class = CompanyCreateSerializer
