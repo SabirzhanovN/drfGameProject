@@ -7,6 +7,8 @@ from .serializers import GameCreateSerializer, GameDeleteSerializer, GameDetailS
 
 from .models import Category, Game, Company
 
+# Category model api
+
 
 class CategoryListAPIView(generics.ListAPIView):
     queryset = Category.objects.all()
@@ -33,4 +35,34 @@ class CategoryCreateAPIView(generics.CreateAPIView):
 class CategoryDeleteAPIView(generics.DestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryDeleteSerializer
+    lookup_field = 'id'
+
+# Game model api
+
+
+class GameListAPIView(generics.ListAPIView):
+    queryset = Game.objects.all()
+    serializer_class = GameListSerializer
+
+
+class GameDetailAPIView(generics.RetrieveAPIView):
+    queryset = Game.objects.all()
+    serializer_class = GameDetailSerializer
+    lookup_field = 'id'
+
+
+class GameCreateAPIView(generics.CreateAPIView):
+    queryset = Game.objects.all()
+    serializer_class = GameCreateSerializer
+
+
+class GameUpdateAPIView(generics.UpdateAPIView):
+    queryset = Game.objects.all()
+    serializer_class = GameUpdateSerializer
+    lookup_field = 'id'
+
+
+class GameDeleteAPIView(generics.DestroyAPIView):
+    queryset = Game.objects.all()
+    serializer_class = GameDeleteSerializer
     lookup_field = 'id'
